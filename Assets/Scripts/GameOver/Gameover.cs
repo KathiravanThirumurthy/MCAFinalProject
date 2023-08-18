@@ -25,7 +25,7 @@ public class Gameover : MonoBehaviour
     {
         //Click Listener is added to the Reload 
         _btnLobby.onClick.AddListener(LobbyScreen);
-        _btnQuit.onClick.AddListener(QuitGame);
+       // _btnQuit.onClick.AddListener(QuitGame);
         _btnReload.onClick.AddListener(ReloadLevel);
 
     }
@@ -55,5 +55,13 @@ public class Gameover : MonoBehaviour
         Application.Quit();
     }
 
-    
+    public void ReplayGame()
+    {
+        // Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(0);
+        //Resetting all unlocked levels
+        PlayerPrefs.DeleteAll();
+    }
+
+
 }
