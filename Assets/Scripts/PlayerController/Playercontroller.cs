@@ -102,7 +102,8 @@ public class Playercontroller : MonoBehaviour
         {
             PlayerAttack();
             _playerAnimation.attack();
-            AudioManager.Instance.swordSwingSound(swordSwing);
+            //AudioManager.Instance.swordSwingSound(swordSwing);
+            SoundManager.Instance.playSound("EllenMeleeAttack");
 
         }
         if (Input.GetKeyDown(KeyCode.Return))
@@ -166,7 +167,8 @@ public class Playercontroller : MonoBehaviour
         {
             Debug.Log("Dead");
             _playerAnimation.playerDead(true);
-            AudioManager.Instance.playeDeath(playerDeath);
+            //AudioManager.Instance.playeDeath(playerDeath);
+            SoundManager.Instance.playSound("PlayerDeath");
             StartCoroutine(playGameOverDelay());
             // _gameOverController.PlayerDied();
 
@@ -179,8 +181,11 @@ public class Playercontroller : MonoBehaviour
         {
            // Debug.Log("LEvelComplete");
             StartCoroutine(LoadLevel(nextSceneLoad));
-            AudioManager.Instance.levelComplete(levelCompleted);
-        }else if(target.gameObject.tag == "switch")
+            //AudioManager.Instance.levelComplete(levelCompleted);
+            SoundManager.Instance.playSound("LevelComplete");
+
+        }
+        else if(target.gameObject.tag == "switch")
         {
             
             GameObject obj = GameObject.Find("Wall"); // Replace "ObjectName" with the name of the GameObject you want to find
@@ -208,7 +213,8 @@ public class Playercontroller : MonoBehaviour
     {
         // Debug.Log("Score:" + score);
         _scoreController.incrementScore(score);
-         AudioManager.Instance.PlayCollectable(keyPickup);
+        // AudioManager.Instance.PlayCollectable(keyPickup);
+        SoundManager.Instance.playSound("GenericPickup");
     }
     public void playerDead(bool playerState)
     {
@@ -223,9 +229,10 @@ public class Playercontroller : MonoBehaviour
         //Debug.Log(_lives);
         _playerAnimation.playerHurt();
         LifeController.instance.UpdateLives(_lives);
-        AudioManager.Instance.playerHurtSound(playerHurt);
-        
-       
+        //AudioManager.Instance.playerHurtSound(playerHurt);
+        SoundManager.Instance.playSound("EllenEmotesEffort");
+
+
         if (_lives < 0)
         {
 
@@ -239,7 +246,8 @@ public class Playercontroller : MonoBehaviour
             _playerAnimation.playerDead(true);
             //UIManager.instance.restartCurrentScene();
            
-            AudioManager.Instance.playeDeath(playerDeath);
+           // AudioManager.Instance.playeDeath(playerDeath);
+            SoundManager.Instance.playSound("PlayerDeath");
             StartCoroutine(playGameOverDelay());
             // _gameOverController.PlayerDied();
             
@@ -259,7 +267,7 @@ public class Playercontroller : MonoBehaviour
         Collider2D[] hitEnemies =Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
          foreach(Collider2D enemy in hitEnemies)
          {
-             Debug.Log("we hit " + enemy.name);
+            // Debug.Log("we hit " + enemy.name);
              enemy.GetComponent<MeleeEnemy>().TakeDamage(attackDamage);
          }
   

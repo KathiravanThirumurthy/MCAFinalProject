@@ -36,7 +36,7 @@ public class MagicPlatform : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Platform touched");
+           // Debug.Log("Platform touched");
             col.transform.parent = this.transform;
             //  target.transform.parent = null;
         }
@@ -45,7 +45,7 @@ public class MagicPlatform : MonoBehaviour
     {
         if (target.gameObject.tag == "Player")
         {
-            Debug.Log("Platfor on exit");
+          //  Debug.Log("Platfor on exit");
 
             target.transform.parent = null;
         }

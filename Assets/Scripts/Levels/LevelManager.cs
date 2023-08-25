@@ -20,6 +20,8 @@ public class LevelManager : MonoBehaviour
      private Button _closePopBtn;*/
     [SerializeField]
     private Color _newColor;
+    [SerializeField]
+    private int levelIndex;
     private Animator anim;
     public float desiredWidth = 3f; // Desired width of the sprite
     public float desiredHeight = 3f;
@@ -31,33 +33,32 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < levelBtns.Length; i++)
         {
 
-            if (i + 1 > levelAt)
-            {
-                levelBtns[i].interactable = false;
-                levelBtns[i].image.sprite = lockedImage;
-                RectTransform rectTransform = levelBtns[i].GetComponent<RectTransform>();
-                Text buttonText = levelBtns[i].GetComponentInChildren<Text>();
-                buttonText.text = "";
-                Vector2 sizeDelta = rectTransform.sizeDelta;
-                sizeDelta.x = 100;
-                sizeDelta.y = 100;
-                rectTransform.sizeDelta = sizeDelta;
+             if (i + 1 > levelAt)
+             {
+                 levelBtns[i].interactable = false;
+                 levelBtns[i].image.sprite = lockedImage;
+                 RectTransform rectTransform = levelBtns[i].GetComponent<RectTransform>();
+                 Text buttonText = levelBtns[i].GetComponentInChildren<Text>();
+                 buttonText.text = "";
+                 Vector2 sizeDelta = rectTransform.sizeDelta;
+                 sizeDelta.x = 100;
+                 sizeDelta.y = 100;
+                 rectTransform.sizeDelta = sizeDelta;
 
-            }else
-            {
-                levelBtns[i].interactable = true;
-                levelBtns[i].image.sprite = unlockedImage;
-                RectTransform rectTransform = levelBtns[i].GetComponent<RectTransform>();
-                Text buttonText = levelBtns[i].GetComponentInChildren<Text>();
-               
-                
-                buttonText.text = (i + 1).ToString();
-               // buttonText.color = _newColor;
-                Vector2 sizeDelta = rectTransform.sizeDelta;
-                sizeDelta.x = 100;
-                sizeDelta.y = 100;
-                rectTransform.sizeDelta = sizeDelta;
-            }
+             }else
+             {
+                 levelBtns[i].interactable = true;
+                 levelBtns[i].image.sprite = unlockedImage;
+                 RectTransform rectTransform = levelBtns[i].GetComponent<RectTransform>();
+                 Text buttonText = levelBtns[i].GetComponentInChildren<Text>();
+                 buttonText.text = (i + 1).ToString();
+                // buttonText.color = _newColor;
+                 Vector2 sizeDelta = rectTransform.sizeDelta;
+                 sizeDelta.x = 100;
+                 sizeDelta.y = 100;
+                 rectTransform.sizeDelta = sizeDelta;
+             }
+            
 
             // _resetBtn.onClick.AddListener(deletePref);
         }
@@ -90,6 +91,13 @@ public class LevelManager : MonoBehaviour
 
         }
 
+       /* public void onClickLevel()
+        {
+            SceneManager.LoadScene(levelIndex);
+            Debug.Log(levelIndex);
+            Debug.Log("from scene controller");
+        }*/
 
-    }
+
+}
    

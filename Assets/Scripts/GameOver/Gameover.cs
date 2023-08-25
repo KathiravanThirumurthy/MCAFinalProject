@@ -24,8 +24,8 @@ public class Gameover : MonoBehaviour
     private void Awake()
     {
         //Click Listener is added to the Reload 
-        _btnLobby.onClick.AddListener(LobbyScreen);
-       // _btnQuit.onClick.AddListener(QuitGame);
+       // _btnLobby.onClick.AddListener(LobbyScreen);
+        _btnQuit.onClick.AddListener(QuitGame);
         _btnReload.onClick.AddListener(ReloadLevel);
 
     }

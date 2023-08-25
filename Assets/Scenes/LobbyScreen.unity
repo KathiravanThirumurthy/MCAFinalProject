@@ -971,7 +971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &228681041
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228681040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52b369ccd68ed0c4b86a68478f7f990d, type: 3}
   m_Name: 
@@ -1739,7 +1739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &303709478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1747,7 +1747,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303709477}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cb646ab5b8af27489fb044f46c63914, type: 3}
   m_Name: 
@@ -2848,7 +2848,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 443933460}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 443933462}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: onClickLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &443933460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2900,6 +2912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: Level2
+  levelIndex: 2
 --- !u!1 &452457816
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,6 +3048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: Level6
+  levelIndex: 0
 --- !u!1 &453783221
 GameObject:
   m_ObjectHideFlags: 0
@@ -4840,7 +4854,7 @@ RectTransform:
   m_Father: {fileID: 1476629328}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.374595}
+  m_AnchorMin: {x: 0, y: 0.37459505}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -5273,6 +5287,7 @@ MonoBehaviour:
   - {fileID: 452457818}
   _resetBtn: {fileID: 1561438035}
   _newColor: {r: 0.9372549, g: 0.5803922, b: 0.2627451, a: 0}
+  levelIndex: 0
   desiredWidth: 150
   desiredHeight: 150
 --- !u!4 &911841610
@@ -6071,10 +6086,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 228681042}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: setVolume
-        m_Mode: 0
+      - m_Target: {fileID: 1467380321}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: UpdateMusicVolume
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6534,8 +6549,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 805566379}
   m_HandleRect: {fileID: 805566378}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.625405
+  m_Value: 1.0000001
+  m_Size: 0.62540495
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6740,7 +6755,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1228906427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1228906429}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: onClickLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1228906427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6791,7 +6818,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc4dcffc7596694ea43cfdf9ce65262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Level3
+  levelName: 
+  levelIndex: 3
 --- !u!1 &1287358042
 GameObject:
   m_ObjectHideFlags: 0
@@ -7541,7 +7569,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1564032870}
   m_HandleRect: {fileID: 1564032869}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7739,6 +7767,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452777239}
   m_CullTransparentMesh: 1
+--- !u!114 &1467380321 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1508044425033048395, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+  m_PrefabInstance: {fileID: 1508044426397356842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093c839a729fb0040b846586e05d6180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1476629327
 GameObject:
   m_ObjectHideFlags: 0
@@ -8432,7 +8471,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1543056224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1543056226}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: onClickLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1543056224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8484,6 +8535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: Level1
+  levelIndex: 1
 --- !u!1 &1560300773
 GameObject:
   m_ObjectHideFlags: 0
@@ -8575,10 +8627,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 228681042}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: MasterVolume
-        m_Mode: 0
+      - m_Target: {fileID: 1467380321}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: UpdateMasterVolume
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9491,12 +9543,12 @@ GameObject:
   - component: {fileID: 1793748915}
   - component: {fileID: 1793748916}
   m_Layer: 5
-  m_Name: SFXVoe
+  m_Name: SFXVol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1793748915
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9567,14 +9619,14 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.08
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 228681042}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: sfxVolume
-        m_Mode: 0
+      - m_Target: {fileID: 1467380321}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: UpdateSFXVolume
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10062,7 +10114,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0006603581, y: 0.000019501895}
+  m_AnchoredPosition: {x: 0.00006166986, y: 0.000019501895}
   m_SizeDelta: {x: -394.3234, y: 500}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1869972812
@@ -10240,6 +10292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: Level4
+  levelIndex: 0
 --- !u!1 &1898912423
 GameObject:
   m_ObjectHideFlags: 0
@@ -10511,7 +10564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1952534272
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11366,6 +11419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: Level5
+  levelIndex: 0
 --- !u!1 &2121979630
 GameObject:
   m_ObjectHideFlags: 0
@@ -11448,7 +11502,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1807531206}
   m_HandleRect: {fileID: 1807531205}
   m_Direction: 2
-  m_Value: 1.0000002
+  m_Value: 1.0000001
   m_Size: 0.4977904
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -11627,3 +11681,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139573667}
   m_CullTransparentMesh: 1
+--- !u!1001 &1508044426397356842
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1508044425033048393, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508044425033048393, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508044425033048393, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508044425033048393, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508044425033048393, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508044425033048393, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508044425033048393, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508044425033048393, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508044425033048393, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508044425033048393, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508044425033048393, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508044425033048394, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508044425033048395, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: sfxVolumeSlider
+      value: 
+      objectReference: {fileID: 1793748916}
+    - target: {fileID: 1508044425033048395, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: musicVolumeSlider
+      value: 
+      objectReference: {fileID: 1045866074}
+    - target: {fileID: 1508044425033048395, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}
+      propertyPath: masterVolumeSlider
+      value: 
+      objectReference: {fileID: 1560300775}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac0e9d85c7efd5e43a46ad39e87a3c6d, type: 3}

@@ -87,13 +87,15 @@ public abstract class EnemyController : MonoBehaviour
     {
        
         currentHealth -= damage;
-       // _animator.SetBool("isHurt", true);
-        AudioManager.Instance.meleehurt(hurt);
+        // _animator.SetBool("isHurt", true);
+        //  AudioManager.Instance.meleehurt(hurt);
+        SoundManager.Instance.playSound("Enemyhurt");
         _animator.SetTrigger("Hurt");
        
         if (currentHealth <= 0)
         {
             Die();
+            
         }
 
         
@@ -107,8 +109,9 @@ public abstract class EnemyController : MonoBehaviour
     protected virtual void Die()
     {
         //Die enemy
-        Debug.Log("Chomper Enemy Died");
-       _animator.SetBool("isDead", true);
+       // Debug.Log("Chomper Enemy Died");
+        SoundManager.Instance.playSound("ChomperDie");
+        _animator.SetBool("isDead", true);
 
         //Disable enemy
        // GetComponent<Collider2D>().enabled = false;
